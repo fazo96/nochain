@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Password Generator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="a web app capable of deterministically generate different passwords for different services">
+    <meta name="author" content="Enrico Fasoli (fazo96)">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="skeleton.css">
+    <style>
+      .title {
+        text-align: center;
+        margin-top: 2rem;
+      }
+      .title img {
+        width: 6em;
+      }
+      .footer {
+        text-align: center;
+        color: #ababab;
+      }
+      .buttons {
+        text-align: center;
+        display: block;
+      }
+      button {
+        max-width: 20em;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <img src="lock.png" />
+      </div>
+      <hr>
+      <input type="password" class="u-full-width" placeholder="Your master password" id="key">
+      <input type="text" class="u-full-width" placeholder="The service you want to log in" id="service">
+      <div class="buttons">
+        <button onClick="generate()">Generate</button>
+        <button onClick="hide()">Clear</button>
+      </div>
+      <div id="error"></div>
+      <div id="result"></div>
+      <hr>
+      <div class="footer">
+        <p>This prototype was created by <a href="https://github.com/fazo96">Enrico Fasoli</a></p>
+        <p>Please <u>don't use this for anything serious</u>! It's just a prototype</p>
+      </div>
+    </div>
+    <script src="sjcl.min.js"></script>
+    <script src="quickpass.js"></script>
+  </body>
+</html>
