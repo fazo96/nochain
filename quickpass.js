@@ -1,5 +1,7 @@
-var res = document.getElementById('result')
 var err = document.getElementById('error')
+var progress = document.getElementById('progress-container')
+var bar = document.getElementById('progress')
+var res = document.getElementById('result')
 
 function generate () {
   err.innerHTML = ''
@@ -10,14 +12,26 @@ function generate () {
   } else if (salt.length < 3) {
     err.innerHTML = 'Your service name is not long enough to be safe!'
   } else {
-    res.innerHTML = 'Generating...'
     var worker = new Worker('worker.js')
     worker.onmessage = e => {
-      console.log(e)
-      res.innerHTML = e.data
+      if (e.data[0] === 'result') {
+        onProgress(100)
+        res.innerHTML = e.data[1]
+      } else {
+        //console.log('Progress data', e.data[0], e.data[1])
+        var percent = parseInt(e.data[0] / e.data[1] * 100)
+        if (percent > 100) percent = 100
+        onProgress(percent)
+      }
     }
     worker.postMessage([seed, salt])
   }
+}
+
+function onProgress (percent) {
+  //console.log('Progress', percent + '%')
+  progress.style.display = 'block'
+  bar.style.width = percent + '%'
 }
 
 function hide () {
@@ -25,4 +39,6 @@ function hide () {
   err.innerHTML = ''
   document.getElementById('key').value = ''
   document.getElementById('service').value = ''
+  progress.style.display = 'none'
+  bar.style.width = 0
 }

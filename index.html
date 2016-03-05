@@ -20,12 +20,33 @@
         text-align: center;
         color: #ababab;
       }
-      .buttons {
-        text-align: center;
+      .progress-bar-container {
+        height: 3rem;
+        vertical-align: middle;
+      }
+      .progress-bar {
         display: block;
+        width: 0%;
+        min-height: 2.3rem;
+        float: left;
+        background-color: #ababab;
+        border-radius: 1em;
+        transition: width .5s ease;
       }
       button {
         max-width: 20em;
+        width: 100%;
+      }
+      #buttons {
+        text-align: center;
+        display: block;
+      }
+      #progress-container {
+        display: none;
+        margin-bottom: 1rem;
+      }
+      #result {
+        text-align: center;
         width: 100%;
       }
     </style>
@@ -36,14 +57,20 @@
         <img src="lock.png" />
       </div>
       <hr>
-      <input type="password" class="u-full-width" placeholder="Your master password" id="key">
-      <input type="text" class="u-full-width" placeholder="The service you want to log in" id="service">
-      <div class="buttons">
+      <div id="progress-container" class="progress-bar-container">
+        <div id="progress" class="progress-bar">
+          <div id="result"></div>
+        </div>
+      </div>
+      <div id="inputs">
+        <input type="password" class="u-full-width" placeholder="Your master password" id="key">
+        <input type="text" class="u-full-width" placeholder="The service you want to log in" id="service">
+      </div>
+      <div id="buttons">
         <button onClick="generate()">Generate</button>
         <button onClick="hide()">Clear</button>
       </div>
       <div id="error"></div>
-      <div id="result"></div>
       <hr>
       <div class="footer">
         <p>This prototype was created by <a href="https://github.com/fazo96">Enrico Fasoli</a></p>
