@@ -35,36 +35,29 @@
     <div class="container">
       <header>
         <img src="lock.png" /><br>
-        <a href="about.html">NoChain</a>
+        <a href="index.html">Back to App</a>
         <hr/>
       </header>
-
-      <!-- APP -->
-
-      <section id="app">
-        <div id="progress-container" class="progress-bar-container">
-          <div id="progress" class="progress-bar">
-            <div id="result"></div>
-          </div>
-        </div>
-        <div id="error"></div>
-        <div id="inputs">
-          <input type="password" class="u-full-width" placeholder="Your master password" id="key">
-          <input type="text" class="u-full-width" placeholder="The service you want to log in" id="service">
-        </div>
-        <div id="buttons">
-          <button onClick="generate()">Generate</button>
-          <button onClick="hide()">Clear</button>
-        </div>
+      <section id="about">
+        <h2>NoChain</h2>
+        <ul>
+          <li> generates a different password for each service you need
+          <li> works offline, in any browser
+          <li> lightweight, it should load fast on slow networks
+          <li> responsive, works well on small screens
+          <li> private, it doesn't log anything, send anything or store anything anywhere
+          <li> standalone, you can download the page and use it even if your machine is offline
+        </ul>
+        <p><strong>Warning:</strong> even though all of this is true, remember that <u>your browser</u> probably saves this page in its history or this website may be compromised and logging your keystrokes.</p>
+        <h3>Source Code and License</h3>
+        <p>NoChain is <strong>Free Software</strong>. You have all the rights to use, copy, modify and redistribute this product as long as you honor the GNU General Public License version 3 or any later version unless specified differently in a file.</p>
+        <p>NoChain uses files from third party Free Software. The license for those files is specified in them.</p>
+        <p>You can find it <a href="https://github.com/fazo96/nochain">On Github</a></p>
       </section>
-
       <footer>
         <hr/>
         <p>Created by <a href="https://github.com/fazo96">Enrico Fasoli</a></p>
-        <p>More information in the <a href="about.html">About Page</a>
       </footer>
     </div>
-    <script src="sjcl.min.js"></script>
-    <script src="quickpass.js"></script>
   </body>
 </html>

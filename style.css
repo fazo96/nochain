@@ -1,0 +1,81 @@
+/*
+    NoChain Password Manager
+    Copyright (C) 2016 Enrico Fasoli (fazo96)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+h1, h2, h3, h4, h5 {
+  color: #a0a0a0;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  display: block;
+  margin: 1em auto;
+  text-align: center;
+}
+a {
+  color: #ababab;
+  text-decoration: underline;
+  text-decoration-style: solid;
+}
+header {
+  text-align: center;
+  margin-top: 2rem;
+}
+header img {
+  width: 6em;
+}
+footer {
+  text-align: center;
+  color: #ababab;
+}
+.progress-bar-container {
+  height: 3rem;
+  vertical-align: middle;
+}
+.progress-bar {
+  display: block;
+  width: 0%;
+  min-height: 2.3rem;
+  float: left;
+  background-color: #cdcdcd;
+  border-radius: 1em;
+  transition: width .5s ease;
+}
+button {
+  max-width: 20em;
+  width: 100%;
+}
+#buttons {
+  text-align: center;
+  display: block;
+  transition: display 1s ease;
+}
+#progress-container {
+  display: none;
+  margin-bottom: 1rem;
+}
+#result {
+  text-align: center;
+  width: 100%;
+}
+#error {
+  text-align: center;
+  color:white;
+  background-color: #b45d5d;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+}
+a.github-fork-ribbon.left-top:before {
+  background-color: #333;
+}
